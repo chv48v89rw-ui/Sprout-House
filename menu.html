@@ -39,66 +39,34 @@
 </div>
 </div>
 
+<script src="search_data.js"></script>
 <script>
 const searchInput = document.getElementById("searchInput");
 const suggestionsBox = document.getElementById("suggestions");
 
-// ALL SEARCHABLE DATA (categories + foods)
-const data = [
-    "Breakfast", "Pancakes", "Omelette", "French Toast",
-    "Soups", "Chicken Soup", "Vegetable Soup",
-    "Pasta", "Chicken Alfredo", "Spaghetti Bolognese",
-    "Salads", "Greek Salad", "Avocado Salad",
-    "Beef", "Beef Steak",
-    "Chicken", "Grilled Chicken",
-    "Fish", "Tilapia",
-    "Burgers", "Beef Burger",
-    "Wraps", "Chicken Wrap",
-    "Drinks", "Fresh Juice", "Soda"
-];
-
-// LIVE FILTER SECTIONS
 searchInput.addEventListener("keyup", function () {
     let value = searchInput.value.toLowerCase();
 
-    // FILTER CATEGORIES
-    let categories = document.querySelectorAll(".category");
+    suggestionsBox.innerHTML = "";
 
-    categories.forEach(cat => {
-        let text = cat.textContent.toLowerCase();
-
-        if (text.includes(value)) {
-            cat.style.display = "block";
-        } else {
-            cat.style.display = "none";
-        }
-    });
-
-    // SHOW SUGGESTIONS
-    if (value.length === 0) {
+    if (value === "") {
         suggestionsBox.style.display = "none";
         return;
     }
 
-    let matches = data.filter(item =>
-        item.toLowerCase().includes(value)
+    let matches = foodData.filter(item =>
+        item.name.toLowerCase().includes(value)
     );
 
-    suggestionsBox.innerHTML = "";
     suggestionsBox.style.display = "block";
 
-    matches.forEach(match => {
+    matches.forEach(item => {
         let div = document.createElement("div");
         div.classList.add("suggestion-item");
-        div.innerText = match;
+        div.innerText = item.name;
 
-        // click suggestion fills input
         div.onclick = function () {
-            searchInput.value = match;
-            suggestionsBox.style.display = "none";
-
-            // trigger filter again
-            searchInput.dispatchEvent(new Event("keyup"));
+            window.location.href = item.link; // 🔥 goes to page
         };
 
         suggestionsBox.appendChild(div);
