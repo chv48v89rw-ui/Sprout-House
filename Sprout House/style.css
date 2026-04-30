@@ -189,6 +189,8 @@ header {
 
 .price {
     color: #444; /* 10% dark gray */
+    font-weight: bold;
+    font-size: 16px;
 }
 
 /* =========================
@@ -372,4 +374,9 @@ header {
     background: #32cd32;
     color: white;
 
+}
+.item-name {
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: underline;
 }

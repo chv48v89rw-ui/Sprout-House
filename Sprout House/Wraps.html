@@ -2,51 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Prices - Sprout House</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wraps - Sprout House</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
-    <h1>💰 Edit Menu Prices</h1>
-    <a href="index.html" class="home-link">🏠 Back Home</a>
+    <h1>🌯 Wraps</h1>
+    <a href="menu.html" class="home-link">⬅ Back to Menu</a>
 </header>
 
+
+<!-- CONTENT -->
 <div class="menu">
 
     <div class="category card">
-        <h2>Breakfast</h2>
+        <h2> Wrap Dishes</h2>
 
-        <label>Pancakes Price</label>
-        <input type="number" id="inp_pancakes" value="300">
-        <button onclick="updatePrice('p_pancakes','inp_pancakes')">Update</button>
-    </div>
+        <div class="menu-item">
+            <span class="item-name">Chicken Wrap</span>
+            <p>Lettuce, Chicken Strips & Avocado</p>
+            <span class="price">KSh 590</span>
+        </div>
 
-    <div class="category card">
-        <h2>Soups</h2>
+        
+        <div class="menu-item">
+            <span class="item-name">Beef Wrap</span>
+            <p>Lettuce, Beef Strips, peppers & dressing</p>
+            <span class="price">KSh 690</span>
+        </div>
 
-        <label>Chicken Soup Price</label>
-        <input type="number" id="inp_soup" value="350">
-        <button onclick="updatePrice('p_soup','inp_soup')">Update</button>
-    </div>
+       
+        <div class="menu-item">
+            <span class="item-name">Veg Wrap</span>
+            <p>Capsicum, zucchini, carrots & onions</p>
+            <span class="price">KSh 490</span>
+        </div>
 
-    <div class="category card">
-        <h2>Pasta</h2>
+        
 
-        <label>Chicken Alfredo Price</label>
-        <input type="number" id="inp_pasta" value="600">
-        <button onclick="updatePrice('p_pasta','inp_pasta')">Update</button>
     </div>
 
 </div>
-
-<script>
-function updatePrice(displayId, inputId) {
-    let value = document.getElementById(inputId).value;
-    document.getElementById(displayId).innerText = value;
-    alert("Price updated!");
-}
-</script>
 
 </body>
 </html>
