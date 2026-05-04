@@ -41,6 +41,7 @@ header {
     text-decoration: none;
     font-size: 14px;
     transition: 0.3s;
+    scroll-margin-top: 90px;
 }
 
 .home-link:hover {
@@ -378,5 +379,56 @@ header {
 .item-name {
     font-weight: bold;
     font-size: 16px;
+    text-decoration: underline;
+    color: #32cd32;
+}
+.bev-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    /* 60% white base */
+    background: #ffffff;
+
+    /* subtle lime presence (30%) */
+    border-bottom: 3px solid #32cd32;
+
+    padding: 12px 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Links */
+.bev-nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #222;
+
+    padding: 6px 12px;
+    border-radius: 6px;
+
+    transition: all 0.25s ease;
+}
+
+/* Hover = lime highlight */
+.bev-nav a:hover {
+    background: #32cd32;
+    color: white;
+}
+
+/* Active/Clicked feel */
+.bev-nav a:active {
+    background: #28a428;
+    color: white;
+}
+.menu-header {
+    margin-bottom: 10px;
+    border-left: 5px solid #32cd32;
+    padding-left: 10px;
     text-decoration: underline;
 }
